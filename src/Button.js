@@ -2,12 +2,13 @@ import React from "react";
 import clsx from "clsx";
 
 export default function Button(props) {
-  const { disabled, children, ...rest } = props;
-  const connection = clsx({ disabled: props.disabled, abled: !props.disabled });
-  console.log(connection);
+  const { children, className, ...rest } = props;
+  const classes = clsx("ui-button", className);
+  console.log(classes);
   return (
-    <button className="ui-button" disabled={connection} {...rest}>
+    <button className={classes} {...rest}>
       {children}
     </button>
   );
 }
+
